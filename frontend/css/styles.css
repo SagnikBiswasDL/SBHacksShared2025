@@ -1,8 +1,9 @@
+
 body {
-    font-family: 'Lucida Handwriting', cursive;
+    font-family: 'Arial';
     margin: 0;
-    background-color: black;
-    color: white;
+    background-color: white;
+    color: black;
 }
 
 header {
@@ -12,13 +13,15 @@ header {
     padding: 10px 20px;
 }
 
+.logo-main {
+    display: flex;
+    justify-content: center;
+}
+
 .app-title {
     font-size: 24px;
-    background: linear-gradient(to right, #00ff00, #00cc00, #008000);
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-    transform: translate(50px, 0);
+    color: #76b852;
+    transform: translate(+50px, 0px);
 }
 
 .theme-toggle {
@@ -64,34 +67,73 @@ header {
 }
 
 input:checked + .slider {
-    background-color: rgb(255, 72, 0);
+    background-color: rgb(16, 77, 15);
 }
 
 input:checked + .slider:before {
     transform: translateX(14px);
 }
 
+.login-1 {
+    background-color: white;
+    padding: 10%;
+}
+
+.login-2 {
+    background-color:#76b852;
+    padding: 10%;
+    padding-top: 16%;
+}
+
+
 .login-box {
-    width: 300px;
-    margin: 50px auto;
-    background: #333;
-    border-radius: 20px;
-    padding: 20px;
+    position: relative;
+    z-index: 1;
+    background: #FFFFFF;
+    max-width: 360px;
+    margin: 0 auto 100px;
+    padding: 45px;
     text-align: center;
-    transform: translate(+0%, +50%);
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+.register-box {
+    position: relative;
+    z-index: 1;
+    background: #FFFFFF;
+    max-width: 360px;
+    margin: 0 auto 100px;
+    padding: 45px;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 
 .login-box input {
-    display: block;
+    font-family: "Roboto", sans-serif;
+    outline: 0;
+    background: #f2f2f2;
     width: 100%;
-    margin: 10px 0;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.register-box input {
+    font-family: "Roboto", sans-serif;
+    outline: 0;
+    background: #f2f2f2;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
 }
 
 button {
-    background-color: brown;
+    background-color: rgb(101, 78, 10);
     color: white;
     border: none;
     padding: 10px;
@@ -117,8 +159,7 @@ header {
     align-items: center;
     padding: 10px 20px;
     border-bottom: 5px solid transparent;
-    background-color: var(--header-bg);
-    border-image: linear-gradient(to right, red, orange, yellow) 1;
+    background-color: #ABDC92;
     position: fixed;
     top: 0;
     left: 0;
@@ -128,8 +169,7 @@ header {
 
 header .app-title {
     font-size: 24px;
-    background: linear-gradient(to right, #00ff00, #00cc00, #008000);
-    background-clip: text;
+    background: linear-gradient(to right,rgb(0, 0, 0), rgb(0, 0, 0), rgb(0, 0, 0));
     -webkit-background-clip: text;
     color: transparent;
 }
@@ -809,7 +849,6 @@ header .theme-toggle {
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    line-clamp: 3;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
 }
