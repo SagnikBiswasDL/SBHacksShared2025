@@ -7,11 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
       const formData = new FormData(registerForm);
       const data = Object.fromEntries(formData);
   
-      if (data.password !== data.confirmPassword) {
-        alert("Passwords don't match!");
-        return;
-      }
-  
       const response = await fetch('/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
