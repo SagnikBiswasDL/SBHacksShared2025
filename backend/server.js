@@ -161,11 +161,7 @@ initializeDatabase();
 
 // Register endpoint
 app.post('/register', async (req, res) => {
-  const { email, username, password, confirmPassword } = req.body;
-
-  if (password !== confirmPassword) {
-    return res.status(400).send('Passwords do not match');
-  }
+  const { email, username, password} = req.body;
 
   try {
     await pool.query(
