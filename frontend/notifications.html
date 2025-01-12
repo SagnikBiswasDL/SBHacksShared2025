@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Notifications - NetZero</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <h1 class="app-title">NetZero</h1>
+    <div class="search-bar">
+      <form id="search-form">
+        <input 
+          type="text" 
+          id="search-input" 
+          name="search-input" 
+          placeholder="Search NetZero..."
+          autocomplete="off"
+        >
+        <button type="submit">Search</button>
+      </form>
+    </div>
+    <div class="theme-toggle">
+      <label class="switch">
+        <input type="checkbox" id="themeToggle">
+        <span class="slider"></span>
+      </label>
+    </div>
+  </header>
+
+  <div class="sidebar">
+    <button onclick="location.href='home.html'">Home</button>
+    <button onclick="location.href='messages.html'">Log Activity</button>
+    <button onclick="location.href='maps.html'">Leaderboard</button>
+    <button onclick="location.href='notifications.html'">Notifications</button>
+    <button onclick="location.href='profile.html'">Profile</button>
+    <button>More</button>
+  </div>
+
+  <div id="notifications-container"></div>
+
+  <script src="js/notifications.js"></script>
+  <script>
+    document.getElementById('themeToggle').addEventListener('change', function () {
+      document.body.setAttribute('data-theme', this.checked ? 'light' : 'dark');
+    });
+  </script>
+</body>
+</html>

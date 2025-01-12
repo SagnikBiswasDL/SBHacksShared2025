@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NetZero - Leaderboard</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .leaderboard-container {
+            position: fixed;
+            top: 95px;
+            left: 205px;
+            right: 20px;
+            height: calc(100vh - 80px);
+            background-color: #2c2c2c;
+            padding: 20px;
+            overflow-y: auto;
+            border-radius: 10px;
+        }
+        
+        .leaderboard-entry {
+            background-color: #3c3c3c;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .rank {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ffa500;
+            width: 50px;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            flex-grow: 1;
+            margin: 0 20px;
+        }
+
+        .user-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+
+        .user-details {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .username {
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .stats {
+            color: #aaa;
+            font-size: 14px;
+        }
+
+        .score {
+            font-size: 20px;
+            font-weight: bold;
+            color: #4CAF50;
+        }
+
+        .top-3 {
+            border: 2px solid;
+        }
+
+        .rank-1 {
+            border-color: #ffd700;
+        }
+
+        .rank-2 {
+            border-color: #c0c0c0;
+        }
+
+        .rank-3 {
+            border-color: #cd7f32;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="app-title">NetZero</h1>
+        <div class="search-bar">
+            <form id="search-form">
+                <input 
+                    type="text" 
+                    id="search-input" 
+                    name="search-input" 
+                    placeholder="Search NetZero..."
+                    autocomplete="off"
+                >
+                <button type="submit">Search</button>
+            </form>
+        </div>
+        <div class="theme-toggle">
+            <label class="switch">
+                <input type="checkbox" id="themeToggle">
+                <span class="slider"></span>
+            </label>
+        </div>
+    </header>
+
+    <div class="sidebar">
+        <button onclick="location.href='home.html'">Home</button>
+        <button onclick="location.href='messages.html'">Log Activity</button>
+        <button onclick="location.href='maps.html'">Leaderboard</button>
+        <button onclick="location.href='notifications.html'">Notifications</button>
+        <button onclick="location.href='profile.html'">Profile</button>
+        <button>More</button>
+    </div>
+
+    <div class="leaderboard-container">
+        <h2>Carbon Reduction Leaderboard</h2>
+        <div id="leaderboard-list">
+            <!-- Leaderboard entries will be dynamically added here -->
+        </div>
+    </div>
+
+    <script src="js/leaderboard.js"></script>
+    <script>
+        document.getElementById('themeToggle').addEventListener('change', function () {
+            document.body.setAttribute('data-theme', this.checked ? 'light' : 'dark');
+        });
+    </script>
+</body>
+</html>
+  

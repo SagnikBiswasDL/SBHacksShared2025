@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - NetZero</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <h1 class="app-title">NetZero</h1>
+    <div class="search-bar">
+        <form id="search-form">
+            <input 
+                type="text" 
+                id="search-input" 
+                name="search-input" 
+                placeholder="Search NetZero..."
+                autocomplete="off"
+            >
+            <button type="submit">Search</button>
+        </form>
+    </div>
+    <div class="theme-toggle">
+      <label class="switch">
+        <input type="checkbox" id="themeToggle">
+        <span class="slider"></span>
+      </label>
+    </div>
+  </header>
+  <div class="sidebar">
+    <button onclick="location.href='home.html'">Home</button>
+    <button onclick="location.href='messages.html'">Log Activity</button>
+    <button onclick="location.href='maps.html'">Leaderboard</button>
+    <button onclick="location.href='notifications.html'">Notifications</button>
+    <button onclick="location.href='profile.html'">Profile</button>
+    <button>More</button>
+  </div>
+  <script>
+    document.getElementById('themeToggle').addEventListener('change', function () {
+        document.body.setAttribute('data-theme', this.checked ? 'light' : 'dark');
+    });
+  </script>
+    <div class="posts-container">
+        <button class="create-post-toggle">Create New Post!</button>
+        
+        <div class="create-post-form">
+            <h2>Create New Post</h2>
+            <form id="newPostForm">
+                <input type="text" id="postTitle" placeholder="Post Title" required>
+                <textarea id="postContent" placeholder="What's on your mind?" required></textarea>
+                <input type="file" id="postMedia" accept="image/*,video/*">
+                <div class="form-buttons">
+                    <button type="button" class="cancel-button">Cancel</button>
+                    <button type="submit">Post</button>
+                </div>
+            </form>
+        </div>
+
+        <div id="postsFeed">
+            <!-- Posts will be dynamically added here -->
+        </div>
+    </div>
+
+    <script src="js/home.js"></script>
+
+    <div id="editPostModal" class="modal hidden">
+        <div class="modal-content">
+            <h2>Edit Post</h2>
+            <form id="editPostForm">
+                <input type="text" id="editPostTitle" placeholder="Post Title" required>
+                <textarea id="editPostContent" placeholder="What's on your mind?" required></textarea>
+                <div class="form-buttons">
+                    <button type="button" class="cancel-button" onclick="closeEditModal()">Cancel</button>
+                    <button type="submit">Save Changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

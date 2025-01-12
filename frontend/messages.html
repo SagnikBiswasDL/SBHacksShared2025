@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Chat - NetZero</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/messages.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1 class="app-title">NetZero</h1>
+        <div class="search-bar">
+            <form id="search-form">
+                <input 
+                    type="text" 
+                    id="search-input" 
+                    name="search-input" 
+                    placeholder="Search NetZero..."
+                    autocomplete="off"
+                >
+                <button type="submit">Search</button>
+            </form>
+        </div>
+        <div class="theme-toggle">
+          <label class="switch">
+            <input type="checkbox" id="themeToggle">
+            <span class="slider"></span>
+          </label>
+        </div>
+    </header>
+    <div class="sidebar">
+        <button onclick="location.href='home.html'">Home</button>
+        <button onclick="location.href='messages.html'">Log Activity</button>
+        <button onclick="location.href='maps.html'">Leaderboard</button>
+        <button onclick="location.href='notifications.html'">Notifications</button>
+        <button onclick="location.href='profile.html'">Profile</button>
+        <button>More</button>
+    </div>
+    <script>
+      document.getElementById('themeToggle').addEventListener('change', function () {
+          document.body.setAttribute('data-theme', this.checked ? 'light' : 'dark');
+      });
+    </script>
+    <div class="chats-sidebar" id="chats-sidebar">
+        <div class="chats-container" id="chats-container">
+            <!-- AI Assistant will be the only chat option -->
+            <div class="chat-button active">
+                <img src="images/ai-avatar.png" alt="AI Assistant">
+                <span>NetZero AI Assistant</span>
+            </div>
+        </div>
+    </div>
+
+    <main class="messages-main">
+        <div id="chat-header" class="chat-header">
+            <img id="chat-profile-pic" class="chat-profile-pic" src="images/ai-avatar.png" alt="AI Assistant">
+            <span id="chat-username" class="chat-username">NetZero AI Assistant</span>
+        </div>
+        
+        <div id="messages-container" class="messages-container">
+            <!-- AI chat messages will be displayed here -->
+            <div class="message received">
+                <div class="message-text">
+                    Hello! I'm your NetZero AI Assistant. I can help you log and track your sustainability activities. What would you like to record today?
+                </div>
+            </div>
+        </div>
+
+        <div id="message-input-container" class="message-input-container">
+            <textarea id="message-input" placeholder="Describe your sustainable activity..."></textarea>
+            <button id="send-message-btn">Send</button>
+        </div>
+    </main>
+</body>
+</html>

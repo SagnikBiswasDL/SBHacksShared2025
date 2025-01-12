@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile - NetZero</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/profile.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1 class="app-title">NetZero</h1>
+        <div class="search-bar">
+            <form id="search-form">
+                <input 
+                    type="text" 
+                    id="search-input" 
+                    name="search-input" 
+                    placeholder="Search NetZero..."
+                    autocomplete="off"
+                >
+                <button type="submit">Search</button>
+            </form>
+        </div>
+        <div class="theme-toggle">
+          <label class="switch">
+            <input type="checkbox" id="themeToggle">
+            <span class="slider"></span>
+          </label>
+        </div>
+    </header>
+    <div class="sidebar">
+        <button onclick="location.href='home.html'">Home</button>
+        <button onclick="location.href='messages.html'">Log Activity</button>
+        <button onclick="location.href='maps.html'">Leaderboard</button>
+        <button onclick="location.href='notifications.html'">Notifications</button>
+        <button onclick="location.href='profile.html'">Profile</button>
+        <button>More</button>
+    </div>
+    <script>
+      document.getElementById('themeToggle').addEventListener('change', function () {
+          document.body.setAttribute('data-theme', this.checked ? 'light' : 'dark');
+      });
+    </script>
+    <main>
+        <div class="edit-profile-container">
+          <div class="profile-card">
+            <img id="profile-pic" class="profile-pic" src="" alt="Profile Picture">
+            <form id="profile-pic-form" enctype="multipart/form-data" style="display: none;">
+                <input type="file" id="profile-pic-upload" name="profile_pic" accept="image/*">
+            </form>
+            <h2 id="username-display">Username</h2>
+            <h3 id="name-display">Name</h3>
+            <p id="connections-display">Connections: 0</p>
+            <p id="posts-display">Posts: 0</p>
+            <p id="intro-display">Introduction: Lorem ipsum...</p>
+            <div class="profile-buttons">
+              <button id="edit-profile-btn">Edit Profile</button>
+              <button id="logout-btn">Log Out</button>
+            </div>
+          </div>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>View Profile - NetZero</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/view-profile.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1 class="app-title">NetZero</h1>
+    <div class="search-bar">
+        <form id="search-form">
+            <input 
+                type="text" 
+                id="search-input" 
+                name="search-input" 
+                placeholder="Search NetZero..."
+                autocomplete="off"
+            >
+            <button type="submit">Search</button>
+        </form>
+    </div>
+    <div class="theme-toggle">
+      <label class="switch">
+        <input type="checkbox" id="themeToggle">
+        <span class="slider"></span>
+      </label>
+    </div>
+  </header>
+  <div class="sidebar">
+    <button onclick="location.href='home.html'">Home</button>
+    <button onclick="location.href='messages.html'">Log Activity</button>
+    <button onclick="location.href='maps.html'">Leaderboard</button>
+    <button onclick="location.href='notifications.html'">Notifications</button>
+    <button onclick="location.href='profile.html'">Profile</button>
+    <button>More</button>
+  </div>
+  <script>
+    document.getElementById('themeToggle').addEventListener('change', function () {
+        document.body.setAttribute('data-theme', this.checked ? 'light' : 'dark');
+    });
+  </script>
+  <main>
+    <div class="profile-card">
+      <img id="profile-pic" class="profile-pic" src="" alt="Profile Picture">
+      <h2 id="username-display">Username</h2>
+      <h3 id="name-display">Name</h3>
+      <p id="connections-display">Connections: 0</p>
+      <p id="posts-display">Posts: 0</p>
+      <p id="intro-display">Introduction: Lorem ipsum...</p>
+      <div class="profile-buttons">
+        <button id="connect-btn">Connect</button>
+        <button id="message-btn">Message</button>
+      </div>
+    </div>
+
+    <div class="mini-feed-container">
+        <div class="feed-header">
+            <h2>Posts</h2>
+            <select id="post-sort" class="sort-dropdown">
+                <option value="recent">Most Recent</option>
+                <option value="likes">Most Liked</option>
+                <option value="comments">Most Commented</option>
+                <option value="oldest">Oldest</option>
+            </select>
+        </div>
+        <div id="mini-feed">
+            <!-- Posts will be dynamically added here -->
+            <div class="no-posts-message" style="display: none;">
+                No posts yet
+            </div>
+        </div>
+    </div>
+  </main>
+  <script>
+    // Load header dynamically
+    fetch('header.html').then(res => res.text()).then(html => {
+      document.getElementById('header-container').innerHTML = html;
+    });
+  </script>
+</body>
+</html>
